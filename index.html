@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="nav-bar">
+        <button id="burger" class="open-main-nav">
+			<span class="burger"></span>
+			<span class="burger-text">Menu</span>
+		</button>
+		<nav class="main-nav" id="main-nav">
+			<ul>
+				<li>
+					<a href="#">Collections</a>
+				</li>
+				<li>
+					<a href="#">Men</a>
+				</li>
+				<li>
+					<a href="#">Women</a>
+				</li>
+				<li>
+					<a href="#">About</a>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+				</li>
+			</ul>
+		</nav>
+        <a href=""><img src="img/logo.svg" alt="page's logo"></a>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div id="imgCart" class="img-cart">
+            <img src="img/icon-cart.svg" alt="cart" onclick="showCart()">
+            <img id="visitor" src="img/image-avatar.png" alt="visitor image">
+            <div id="cart" class="cart">
+                <p>Cart</p>
+                <div id="product" class="product">
+                    <span id="empty">Your cart is empty</span>
+                </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="row">
+            <div class="porduct-images">
+                <div onclick="prev()" class="previous">
+                    <img src="img/icon-previous.svg" alt="">
+                </div>
+                <div id="focus" class="focus">
+                    <img id="display-img" src="img/image-product-1.jpg" alt="">
+                </div>
+                <div class="switch-img">
+                    <div>
+                        <img src="img/image-product-1.jpg" alt=""onclick="changeImg(this)">
+                    </div>
+                    <div>
+                        <img src="img/image-product-2.jpg" alt=""onclick="changeImg(this)">
+                    </div>
+                    <div>
+                        <img src="img/image-product-3.jpg" alt=""onclick="changeImg(this)">
+                    </div>
+                    <div>
+                        <img src="img/image-product-4.jpg" alt=""onclick="changeImg(this)">
+                    </div>
+                </div>
+                <div onclick="next()" class="next">
+                    <img src="img/icon-next.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="product-info">
+                <p>Sneaker Company</p>
+                <h1>Fall Limited Edition Sneakers</h1>
+                <p class="desc">
+                    These low-profile sneakers are your perfect casual wear companion. 
+                    Featuring a durable rubber outer sole, 
+                    they’ll withstand everything the weather can offer.
+                </p>
+                <div class="price">
+                    <p>$125.00</p>
+                    <span>50%</span>
+                </div>
+                <span class="prev-price"><del>$250.00</del></span>
+
+                <div class="add-cart">
+                    <div class="add-del">
+                        <img id="minus" src="img/icon-minus.svg" alt="" onclick="delCount()">
+                        <span id="item-count" class="item-count">0</span>
+                        <img id="plus" src="img/icon-plus.svg" alt="" onclick="addCount()">
+                    </div>
+    
+                    <div onclick="addCart(),addItem()" class="add-btn">
+                        <img src="img/icon-cart.svg" alt="">
+                        <span>Add to cart</span>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        
+    </main>
+</body>
+<script src="js/main.js"></script>
+</html>
