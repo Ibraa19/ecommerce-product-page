@@ -49,6 +49,7 @@
             </ul>
         </div>
         <div id="imgCart" class="img-cart">
+            <div id="numberItems" class="number-items"></div>
             <img src="img/icon-cart.svg" alt="cart" onclick="showCart()">
             <img id="visitor" src="img/image-avatar.png" alt="visitor image">
             <div id="cart" class="cart">
@@ -70,16 +71,16 @@
                 </div>
                 <div class="switch-img">
                     <div>
-                        <img src="img/image-product-1.jpg" alt=""onclick="changeImg(this)">
+                        <img id="first-img" src="img/image-product-1.jpg" alt="" onclick="changeImg(this)">
                     </div>
                     <div>
-                        <img src="img/image-product-2.jpg" alt=""onclick="changeImg(this)">
+                        <img src="img/image-product-2.jpg" alt="" onclick="changeImg(this)">
                     </div>
                     <div>
-                        <img src="img/image-product-3.jpg" alt=""onclick="changeImg(this)">
+                        <img src="img/image-product-3.jpg" alt="" onclick="changeImg(this)">
                     </div>
                     <div>
-                        <img src="img/image-product-4.jpg" alt=""onclick="changeImg(this)">
+                        <img src="img/image-product-4.jpg" alt="" onclick="changeImg(this)">
                     </div>
                 </div>
                 <div onclick="next()" class="next">
@@ -108,7 +109,7 @@
                         <img id="plus" src="img/icon-plus.svg" alt="" onclick="addCount()">
                     </div>
     
-                    <div onclick="addCart(),addItem()" class="add-btn">
+                    <div onclick="addCart()" class="add-btn">
                         <img src="img/icon-cart.svg" alt="">
                         <span>Add to cart</span>
                     </div>

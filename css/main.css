@@ -265,6 +265,23 @@ p{
     margin-right: 10px;
 }
 
+.number-items{
+    display: none;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 14px;
+    background: var(--orange);
+    border-radius: 20px;
+    position: absolute;
+    z-index: -1;
+    top: 15%;
+    left: 10%;
+}
+
 #visitor{
     width: 50px;
     border: 2px solid hsl(0, 0%, 100%);

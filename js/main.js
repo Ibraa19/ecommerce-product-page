@@ -21,14 +21,14 @@ function prev(){
 }
 
 imgs = document.getElementsByTagName('img');
-let ultiCount;
+var ultiCount = 0;
 var menuState = 1;
 
 function changeImg(img){
         newSrc = img.src; //this = reference to image that fired onclick
-        focus = imgs[4];
+        focus = document.getElementById("display-img");
         focus.src = newSrc; //no quotes for variable references!
-        for(let i = 5; i < 9; i++)
+        for(let i = 5; i < 12; i++)
         {
             imgs[i].style.opacity = "100%";
             imgs[i].style.borderColor = "hsl(26, 100%, 100%)"
@@ -39,19 +39,14 @@ function changeImg(img){
 
 function addCount(){
     document.getElementById("item-count").innerHTML++
-    ultiCount = document.getElementById("item-count").innerHTML;
-    document.getElementById("fixed-price").innerHTML=`$125.00 x ${ultiCount}`
-    document.getElementById("total-price").innerHTML=`$${125.00*ultiCount}`;
-
+    ultiCount++;
 }
 
 function delCount(){
     var cmp = document.getElementById("item-count").innerHTML;
     if(cmp != 0){
         document.getElementById("item-count").innerHTML--
-        ultiCount = document.getElementById("item-count").innerHTML;
-        document.getElementById("fixed-price").innerHTML=`$125.00 x ${ultiCount}`
-        document.getElementById("total-price").innerHTML=`$${125.00*ultiCount}`;
+        ultiCount--;
     }
 }
 
@@ -78,28 +73,43 @@ function addCart(){
     
     if(count > 0)
     {
+        document.getElementById("numberItems").style.display = "flex";
+        document.getElementById("numberItems").innerHTML = ultiCount;
         document.getElementsByClassName("cart")[0].style.height= "fit-content";
-        contentCart.removeChild(oldCont);
         myEle.setAttribute("class", "new-product")
         eleBtn.setAttribute("class", "add-btn check-btn")
-        myEle.innerHTML = `<img src="img/image-product-1-thumbnail.jpg" alt="">
-        <div class="new-desc">
-            <span>Fall Limited Edition Sneakers</span>
-            <div class="new-prices">
-                <span id="fixed-price">$125.00 x ${ultiCount}   </span>
-                <span id="total-price">$${125.00*ultiCount}</span>
+        if(myEle.innerHTML == ''){
+            contentCart.removeChild(oldCont);
+            myEle.innerHTML = `<img src="img/image-product-1-thumbnail.jpg" alt="">
+            <div class="new-desc">
+                <span>Fall Limited Edition Sneakers</span>
+                <div class="new-prices">
+                    <span id="fixed-price">$125.00 x ${ultiCount}   </span>
+                    <span id="total-price">$${125.00*ultiCount}</span>
+                </div>
             </div>
-        </div>
-        <img onclick="delItem()" src="img/icon-delete.svg" alt="">
-    </div>`;
-        eleBtn.innerHTML = `Checkout`
-        contentCart.appendChild(myEle);
-        contentCart.appendChild(eleBtn);
+            <img onclick="delItem()" src="img/icon-delete.svg" alt="">
+        </div>`;
+            eleBtn.innerHTML = `Checkout`
+            contentCart.appendChild(myEle);
+            contentCart.appendChild(eleBtn);
+            console.log(1)
+        }
+        
+        document.getElementById("fixed-price").innerHTML = `$125.00 x ${ultiCount}`
+        document.getElementById("total-price").innerHTML = `$${125.00*ultiCount}`;
     }
+
+
     
 }
 
+
+
+
 function delItem(){
+    document.getElementById("numberItems").style.display = "none";
+        document.getElementById("numberItems").innerHTML = 0;
     contentCart.removeChild(myEle);
     contentCart.removeChild(eleBtn);
     let empty = document.createElement("span");
