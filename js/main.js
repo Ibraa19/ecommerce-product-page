@@ -62,14 +62,18 @@ function showCart(){
     }
     
 }
-
 let contentCart = document.getElementById("product");
 let myEle = document.createElement("div");
 let eleBtn = document.createElement("div");
 
+
 function addCart(){
     const count = document.getElementById("item-count").innerHTML;
     let oldCont = document.getElementById("empty");
+    contentCart = document.getElementById("product");
+    myEle = document.createElement("div");
+    eleBtn = document.createElement("div");
+
     
     if(count > 0)
     {
